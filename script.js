@@ -11,7 +11,6 @@ async function checkWeather(city) {
         if (response.status === 404) {
             document.querySelector(".error").style.display = "block";
             document.querySelector(".weather").style.display = "none";
-            return;
         }
         const data = await response.json();
 
@@ -29,7 +28,7 @@ async function checkWeather(city) {
             weatherIcon.src = "clear.png"
         }
         else if (data.weather[0].main == "Rain"){
-            weatherIcon.src = "clear.png"
+            weatherIcon.src = "rain.png"
         }
         else if (data.weather[0].main == "Drizzle"){
             weatherIcon.src = "drizzle.png"
